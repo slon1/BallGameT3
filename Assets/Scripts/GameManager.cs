@@ -37,7 +37,7 @@ public class GameManager : MonoBehaviour {
 		ballSpawner = new BallSpawner(pool, storage);
 		ballSpawner.OnDestroy += Item_OnClick;
 		ballSpawner.SpawnBalls(30, 0.1f).AttachExternalCancellation(destroyCancellationToken).Forget();
-		refresh.onClick.AddListener(()=>Restart());
+		refresh.onClick.AddListener(()=>Restart().Forget());
 	}
 
 	
